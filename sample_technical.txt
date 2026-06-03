@@ -1,0 +1,11 @@
+Data Compression: Principles and Applications of Huffman Coding
+
+Data compression is the process of encoding information using fewer bits than the original representation. Lossless compression algorithms allow the original data to be perfectly reconstructed from the compressed data, making them essential for text, executables, and medical imaging where any information loss is unacceptable.
+
+Huffman coding, developed by David A. Huffman in 1952, is one of the most fundamental lossless compression algorithms. It operates on the principle of variable-length encoding: symbols that appear more frequently in the input are assigned shorter codewords, while less frequent symbols receive longer codewords. This greedy algorithm constructs an optimal prefix code binary tree, ensuring that no codeword is a prefix of another, which guarantees unambiguous decoding.
+
+The algorithm begins by calculating the frequency of each symbol in the input data. Each symbol becomes a leaf node in a binary tree, weighted by its frequency. The two nodes with the smallest weights are repeatedly merged into a new internal node whose weight equals the sum of its children, until only one node remains as the root. The path from the root to each leaf determines the binary encoding: left branches typically represent 0 and right branches represent 1.
+
+The theoretical foundation of Huffman coding lies in information theory, particularly Claude Shannon's concept of entropy. The entropy H(X) of a discrete random variable X represents the minimum average number of bits required to encode each symbol without loss. Huffman coding achieves an average code length that is within one bit of the entropy, making it nearly optimal for many practical applications.
+
+Modern compression tools such as ZIP, GZIP, and PNG all incorporate Huffman coding as a key component. While more advanced algorithms like LZ77 and LZ78 achieve better compression ratios by exploiting repeated patterns rather than just symbol frequencies, Huffman coding remains widely used due to its simplicity, speed, and provable optimality for prefix codes.

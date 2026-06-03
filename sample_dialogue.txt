@@ -1,0 +1,23 @@
+Alice: Hey Bob, have you finished the data compression assignment yet?
+
+Bob: Not quite. I am still working on the Huffman tree implementation. The heap logic is a bit tricky.
+
+Alice: I know what you mean. I spent hours debugging my priority queue before I realized I forgot to implement the comparison operator for the node class.
+
+Bob: Exactly! That was my problem too. But once you get the tree building right, the code generation is straightforward. Just a depth-first traversal from the root, appending zero for left branches and one for right branches.
+
+Alice: Right. And do not forget that you need to handle edge cases. What if the text file has only one unique character? Your tree would just be a single node.
+
+Bob: Good point. I will add a check for that. By the way, how are you storing the mapping table for the encoder to use?
+
+Alice: I am using JSON. It is simple, human-readable, and Python has built-in support for it. The encoder can just load the JSON file and get the code for each character instantly.
+
+Bob: Smart. I was thinking of using pickle, but JSON makes more sense since we want the mapping to be portable and easy to inspect.
+
+Alice: Also, make sure you include all characters in the mapping. Spaces, newlines, punctuation marks, everything. Otherwise the decoder will not be able to reconstruct the text perfectly.
+
+Bob: Absolutely. Lossless means lossless. Every single character must be accounted for. I will run a verification script to compare the original and reconstructed files byte by byte when everything is done.
+
+Alice: Sounds good. Let me know if you need help with the bitstream packing. That part can be confusing with all the bit shifting operations.
+
+Bob: Will do. Thanks Alice!
